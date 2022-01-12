@@ -103,7 +103,8 @@ class GUI:
 	def __runCallback(self):
 		self.__getDataFromMenu()
 		self.__root.destroy()
-		self.__callback()
+		if None != self.__callback:
+			self.__callback()
 
 	def __getDataFromMenu(self):
 		for key in self.__stringvars:
