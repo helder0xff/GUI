@@ -1,5 +1,6 @@
 {
-	"main_menu": { 	"time_S":			{ "class": "entry" },
+	"main_menu": { 	"actuator":			{ "class": "basicDropdown", "choices": ["None", "Hebi", "Virtual"]},
+					"time_S":			{ "class": "entry" },
 					"sampleTime_mS":	{ "class": "entry" },
 					"speedInput":		{ "class": "dropdown", "choices": [ "None", "Step", "Ramp" ] },
 					"positionInput":	{ "class": "dropdown", "choices": [ "None", "Step", "Ramp" ] },

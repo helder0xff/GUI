@@ -59,7 +59,7 @@ class GUI:
 		dropDownKeys = []
 		for key in self.__main_menu:
 			itemClass = self.__main_menu[key]['class']
-			if 'entry' == itemClass:
+			if 'entry' == itemClass or 'basicDropdown' == itemClass:
 				entryKeys.append(key)
 			elif 'dropdown'== itemClass:
 				dropDownKeys.append(key)
@@ -131,8 +131,10 @@ class GUI:
 		for key in self.__main_menu:
 			if 'entry' == self.__main_menu[ key ][ 'class' ]:
 				self.__createEntry(key)
-			if 'dropdown' == self.__main_menu[ key ][ 'class' ]:
+			elif 'dropdown' == self.__main_menu[ key ][ 'class' ]:
 				self.__createDropdown(self.__main_menu[ key ][ 'choices' ], key)
+			elif 'basicDropdown' == self.__main_menu[ key ][ 'class' ]:
+				self.__createBasicDropdown(self.__main_menu[key]['choices'], key)
 
 	def __createEntry(self, name):
 		if name not in self.__entries:
@@ -167,5 +169,22 @@ class GUI:
 				if self.__stringvars[ key ].get() == choice:
 					for entry in self.__dropddown_entries[ choice ]:
 						self.__createEntry(key + '_' + entry)
+
+	def __createBasicDropdown(self, choices, name):
+		label = tk.Label(self.__root, text = name)
+		self.__increment_yPlacement(50)
+		label.place(x = 0, y = self.__yPlacement)
+		var = tk.StringVar(name = name, value = 'None')
+		menu = tk.OptionMenu(  self.__root,
+		                        var,
+		                        *choices,
+		                        command = self.__basicDropdownCallback)
+		self.__increment_yPlacement()
+		menu.place(x = 0, y = self.__yPlacement)
+		self.__stringvars[ name ] = var
+
+	def __basicDropdownCallback(self, choice):
+		pass
+
 
 #### end of life #####
