@@ -1,0 +1,13 @@
+{
+	"main_menu": { 	"time_S":			{ "class": "entry" },
+					"sampleTime_mS":	{ "class": "entry" },
+					"speedInput":		{ "class": "dropdown", "choices": [ "None", "Step", "Ramp" ] },
+					"positionInput":	{ "class": "dropdown", "choices": [ "None", "Step", "Ramp" ] },
+					"torqueInput":		{ "class": "dropdown", "choices": [ "None", "Step", "Ramp" ] } },	
+	"dropdown_entries": { 	"None": [ ],
+							"Ramp": [ "slope", "cap" ],
+							"Step": [ "height", "cap"] },
+	"help_message": [	"This is a help messag",
+						"Take it or leave it but do not touch my balls!"]
+
+}
