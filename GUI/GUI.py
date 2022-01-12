@@ -3,7 +3,7 @@ from tkinter import messagebox
 import json
 
 class GUI:
-	def __init__(self, configFile, size = "512x512", callback  = ''):
+	def __init__(self, configFile, size = "512x512", callback  = None):
 		self.__data = { }
 		self.__stringvars = { }
 		self.__entries = { }
